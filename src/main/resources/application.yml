@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: Developer_news
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/developer_news
+    username: test
+    password: test
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
