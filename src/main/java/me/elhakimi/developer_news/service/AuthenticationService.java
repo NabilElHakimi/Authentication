@@ -99,21 +99,25 @@ public class AuthenticationService {
         }
     }
 
+
     private void sendVerificationEmail(User user) { //TODO: Update with company logo
         String subject = "Account Verification";
         String verificationCode = "VERIFICATION CODE " + user.getVerificationCode();
         String htmlMessage = "<html>"
-                + "<body style=\"font-family: Arial, sans-serif;\">"
-                + "<div style=\"background-color: #f5f5f5; padding: 20px;\">"
-                + "<h2 style=\"color: #333;\">Welcome to our app!</h2>"
-                + "<p style=\"font-size: 16px;\">Please enter the verification code below to continue:</p>"
-                + "<div style=\"background-color: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1);\">"
-                + "<h3 style=\"color: #333;\">Verification Code:</h3>"
-                + "<p style=\"font-size: 18px; font-weight: bold; color: #007bff;\">" + verificationCode + "</p>"
-                + "</div>"
-                + "</div>"
+                + "<body style=\"font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7fc; margin: 0; padding: 0;\">"
+                + "  <div style=\"max-width: 600px; margin: 40px auto; background-color: #ffffff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);\">"
+                + "    <h2 style=\"color: #2c3e50; text-align: center; font-size: 28px; font-weight: 600; margin-bottom: 20px;\">Welcome to Our App!</h2>"
+                + "    <p style=\"font-size: 16px; color: #34495e; text-align: center; line-height: 1.5;\">To continue, please enter the verification code below:</p>"
+                + "    <div style=\"background-color: #ecf0f1; padding: 20px; border-radius: 6px; margin-top: 20px;\">"
+                + "      <h3 style=\"color: #2980b9; font-size: 20px; text-align: center;\">Verification Code:</h3>"
+                + "      <p style=\"font-size: 22px; font-weight: bold; color: #e74c3c; text-align: center;\">"
+                + "        " + verificationCode + "</p>"
+                + "    </div>"
+                + "    <p style=\"font-size: 14px; color: #95a5a6; text-align: center; margin-top: 30px;\">If you didn’t request this code, please ignore this email.</p>"
+                + "  </div>"
                 + "</body>"
                 + "</html>";
+
 
         try {
             emailService.sendVerificationEmail(user.getEmail(), subject, htmlMessage);
