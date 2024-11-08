@@ -10,6 +10,7 @@ public class DeveloperNewsApplication {
         SpringApplication.run(DeveloperNewsApplication.class, args);
     }
 
+
 }
 
 
